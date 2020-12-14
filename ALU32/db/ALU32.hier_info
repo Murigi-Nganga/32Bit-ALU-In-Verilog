@@ -1,0 +1,3761 @@
+|ALU32
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+a[4] => a[4].IN1
+a[5] => a[5].IN1
+a[6] => a[6].IN1
+a[7] => a[7].IN1
+a[8] => a[8].IN1
+a[9] => a[9].IN1
+a[10] => a[10].IN1
+a[11] => a[11].IN1
+a[12] => a[12].IN1
+a[13] => a[13].IN1
+a[14] => a[14].IN1
+a[15] => a[15].IN1
+a[16] => a[16].IN1
+a[17] => a[17].IN1
+a[18] => a[18].IN1
+a[19] => a[19].IN1
+a[20] => a[20].IN1
+a[21] => a[21].IN1
+a[22] => a[22].IN1
+a[23] => a[23].IN1
+a[24] => a[24].IN1
+a[25] => a[25].IN1
+a[26] => a[26].IN1
+a[27] => a[27].IN1
+a[28] => a[28].IN1
+a[29] => a[29].IN1
+a[30] => a[30].IN1
+a[31] => a[31].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+b[4] => b[4].IN1
+b[5] => b[5].IN1
+b[6] => b[6].IN1
+b[7] => b[7].IN1
+b[8] => b[8].IN1
+b[9] => b[9].IN1
+b[10] => b[10].IN1
+b[11] => b[11].IN1
+b[12] => b[12].IN1
+b[13] => b[13].IN1
+b[14] => b[14].IN1
+b[15] => b[15].IN1
+b[16] => b[16].IN1
+b[17] => b[17].IN1
+b[18] => b[18].IN1
+b[19] => b[19].IN1
+b[20] => b[20].IN1
+b[21] => b[21].IN1
+b[22] => b[22].IN1
+b[23] => b[23].IN1
+b[24] => b[24].IN1
+b[25] => b[25].IN1
+b[26] => b[26].IN1
+b[27] => b[27].IN1
+b[28] => b[28].IN1
+b[29] => b[29].IN1
+b[30] => b[30].IN1
+b[31] => b[31].IN1
+opcode[0] => opcode[0].IN32
+opcode[1] => opcode[1].IN32
+opcode[2] => opcode[2].IN33
+opcode[3] => opcode[3].IN32
+result[0] <= ALU1_Bit:ALU1.result
+result[1] <= ALU1_Bit:ALU2.result
+result[2] <= ALU1_Bit:ALU3.result
+result[3] <= ALU1_Bit:ALU4.result
+result[4] <= ALU1_Bit:ALU5.result
+result[5] <= ALU1_Bit:ALU6.result
+result[6] <= ALU1_Bit:ALU7.result
+result[7] <= ALU1_Bit:ALU8.result
+result[8] <= ALU1_Bit:ALU9.result
+result[9] <= ALU1_Bit:ALU10.result
+result[10] <= ALU1_Bit:ALU11.result
+result[11] <= ALU1_Bit:ALU12.result
+result[12] <= ALU1_Bit:ALU13.result
+result[13] <= ALU1_Bit:ALU14.result
+result[14] <= ALU1_Bit:ALU15.result
+result[15] <= ALU1_Bit:ALU16.result
+result[16] <= ALU1_Bit:ALU17.result
+result[17] <= ALU1_Bit:ALU18.result
+result[18] <= ALU1_Bit:ALU19.result
+result[19] <= ALU1_Bit:ALU20.result
+result[20] <= ALU1_Bit:ALU21.result
+result[21] <= ALU1_Bit:ALU22.result
+result[22] <= ALU1_Bit:ALU23.result
+result[23] <= ALU1_Bit:ALU24.result
+result[24] <= ALU1_Bit:ALU25.result
+result[25] <= ALU1_Bit:ALU26.result
+result[26] <= ALU1_Bit:ALU27.result
+result[27] <= ALU1_Bit:ALU28.result
+result[28] <= ALU1_Bit:ALU29.result
+result[29] <= ALU1_Bit:ALU30.result
+result[30] <= ALU1_Bit:ALU31.result
+result[31] <= ALU1_Bit_MSB:ALU32.result
+cout <= ALU1_Bit_MSB:ALU32.cout
+overflow <= ALU1_Bit_MSB:ALU32.overflow
+
+
+|ALU32|ALU1_Bit:ALU1
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU1|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU1|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU1|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU1|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU1|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU1|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU1|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU1|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU1|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU1|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU1|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU1|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU2
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU2|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU2|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU2|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU2|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU2|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU2|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU2|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU2|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU2|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU2|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU2|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU2|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU2|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU2|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU2|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU3
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU3|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU3|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU3|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU3|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU3|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU3|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU3|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU3|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU3|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU3|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU3|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU3|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU3|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU3|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU3|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU4
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU4|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU4|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU4|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU4|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU4|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU4|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU4|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU4|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU4|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU4|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU4|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU4|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU4|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU4|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU4|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU5
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU5|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU5|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU5|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU5|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU5|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU5|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU5|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU5|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU5|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU5|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU5|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU5|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU5|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU5|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU5|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU6
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU6|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU6|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU6|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU6|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU6|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU6|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU6|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU6|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU6|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU6|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU6|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU6|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU6|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU6|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU6|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU7
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU7|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU7|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU7|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU7|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU7|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU7|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU7|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU7|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU7|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU7|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU7|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU7|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU7|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU7|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU7|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU8
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU8|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU8|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU8|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU8|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU8|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU8|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU8|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU8|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU8|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU8|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU8|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU8|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU8|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU8|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU8|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU9
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU9|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU9|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU9|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU9|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU9|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU9|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU9|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU9|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU9|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU9|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU9|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU9|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU9|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU9|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU9|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU10
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU10|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU10|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU10|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU10|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU10|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU10|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU10|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU10|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU10|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU10|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU10|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU10|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU10|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU10|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU10|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU11
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU11|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU11|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU11|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU11|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU11|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU11|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU11|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU11|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU11|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU11|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU11|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU11|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU11|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU11|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU11|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU12
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU12|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU12|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU12|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU12|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU12|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU12|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU12|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU12|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU12|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU12|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU12|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU12|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU12|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU12|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU12|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU13
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU13|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU13|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU13|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU13|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU13|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU13|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU13|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU13|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU13|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU13|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU13|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU13|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU13|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU13|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU13|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU14
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU14|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU14|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU14|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU14|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU14|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU14|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU14|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU14|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU14|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU14|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU14|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU14|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU14|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU14|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU14|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU15
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU15|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU15|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU15|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU15|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU15|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU15|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU15|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU15|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU15|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU15|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU15|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU15|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU15|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU15|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU15|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU16
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU16|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU16|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU16|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU16|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU16|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU16|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU16|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU16|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU16|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU16|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU16|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU16|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU16|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU16|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU16|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU17
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU17|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU17|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU17|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU17|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU17|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU17|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU17|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU17|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU17|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU17|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU17|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU17|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU17|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU17|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU17|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU18
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU18|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU18|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU18|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU18|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU18|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU18|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU18|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU18|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU18|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU18|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU18|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU18|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU18|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU18|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU18|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU19
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU19|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU19|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU19|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU19|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU19|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU19|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU19|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU19|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU19|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU19|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU19|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU19|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU19|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU19|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU19|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU20
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU20|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU20|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU20|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU20|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU20|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU20|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU20|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU20|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU20|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU20|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU20|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU20|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU20|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU20|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU20|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU21
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU21|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU21|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU21|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU21|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU21|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU21|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU21|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU21|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU21|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU21|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU21|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU21|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU21|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU21|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU21|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU22
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU22|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU22|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU22|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU22|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU22|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU22|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU22|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU22|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU22|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU22|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU22|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU22|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU22|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU22|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU22|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU23
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU23|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU23|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU23|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU23|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU23|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU23|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU23|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU23|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU23|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU23|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU23|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU23|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU23|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU23|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU23|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU24
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU24|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU24|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU24|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU24|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU24|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU24|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU24|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU24|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU24|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU24|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU24|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU24|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU24|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU24|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU24|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU25
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU25|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU25|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU25|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU25|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU25|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU25|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU25|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU25|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU25|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU25|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU25|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU25|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU25|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU25|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU25|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU26
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU26|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU26|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU26|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU26|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU26|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU26|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU26|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU26|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU26|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU26|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU26|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU26|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU26|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU26|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU26|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU27
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU27|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU27|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU27|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU27|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU27|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU27|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU27|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU27|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU27|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU27|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU27|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU27|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU27|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU27|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU27|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU28
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU28|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU28|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU28|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU28|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU28|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU28|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU28|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU28|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU28|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU28|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU28|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU28|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU28|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU28|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU28|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU29
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU29|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU29|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU29|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU29|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU29|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU29|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU29|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU29|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU29|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU29|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU29|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU29|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU29|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU29|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU29|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU30
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU30|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU30|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU30|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU30|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU30|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU30|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU30|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU30|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU30|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU30|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU30|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU30|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU30|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU30|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU30|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU31
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN1
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= full_adder:full_adder1.cout
+result <= mux4x1module:largemux1.result
+
+
+|ALU32|ALU1_Bit:ALU31|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU31|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit:ALU31|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU31|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU31|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU31|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU31|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU31|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit:ALU31|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU31|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU31|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU31|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU31|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit:ALU31|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit:ALU31|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit_MSB:ALU32
+a => a.IN2
+b => b.IN2
+lessinp => lessinp.IN1
+cin => cin.IN2
+ainv => ainv.IN1
+binv => binv.IN2
+opcodeA => opcodeA.IN1
+opcodeB => opcodeB.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+result <= mux4x1module:largemux1.result
+overflow <= xormodule:xor2.port0
+slt <= slt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|notmodule:not1
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|notmodule:not2
+result <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAIN
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|mux2x1module:smallmux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|mux2x1module:smallmux2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|full_adder:full_adder1
+sum <= xormodule:xor2.port0
+cout <= ormodule:or1.port0
+a => a.IN2
+b => b.IN2
+cin => cin.IN2
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|full_adder:full_adder1|xormodule:xor1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|full_adder:full_adder1|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|full_adder:full_adder1|andmodule:and1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|full_adder:full_adder1|andmodule:and2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|full_adder:full_adder1|ormodule:or1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|mux2x1module:smallmux3
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.DATAB
+b => result.DATAA
+sel => result.OUTPUTSELECT
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|mux4x1module:largemux1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+inp0 => result.DATAB
+inp1 => result.DATAB
+inp2 => result.DATAB
+inp3 => result.DATAA
+sel1 => result.IN0
+sel1 => result.IN0
+sel1 => result.IN0
+sel0 => result.IN1
+sel0 => result.IN1
+sel0 => result.IN1
+
+
+|ALU32|ALU1_Bit_MSB:ALU32|xormodule:xor2
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+a => result.IN0
+b => result.IN1
+
+

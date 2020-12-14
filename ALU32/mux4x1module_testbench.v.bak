@@ -1,0 +1,31 @@
+//The mux4x1 Module Testbench
+
+`timescale 1ns/1ps
+
+module mux4x1module_testbench();   //module mux4X1module(result, inp0, inp1, inp2, inp3, sel1, sel0);
+reg inp0, inp1, inp2, inp3, sel1, sel0;
+wire result;
+
+mux4x1module dut(.inp0(inp0), .inp1(inp1), .inp2(inp2), .inp3(inp3), .sel1(sel1), .sel0(sel0), .result(result));
+initial begin
+		inp0 =1'b0; inp1=1'b0; inp2=1'b0;  inp3 = 1'b0; sel1 = 1'b0; sel0 = 1'b0;
+		#5
+		inp0 =1'b0; inp1=1'b0; inp2=1'b0;  inp3 = 1'b1; sel1 = 1'b0; sel0 = 1'b1;
+		#5
+		inp0 =1'b0; inp1=1'b0; inp2=1'b1;  inp3 = 1'b0; sel1 = 1'b1; sel0 = 1'b0;
+		#5 
+		inp0 =1'b0; inp1=1'b0; inp2=1'b1;  inp3 = 1'b1; sel1 = 1'b1; sel0 = 1'b1;
+		#5
+		inp0 =1'b0; inp1=1'b1; inp2=1'b0;  inp3 = 1'b0; sel1 = 1'b0; sel0 = 1'b0;
+		#5
+		inp0 =1'b1; inp1=1'b0; inp2=1'b0;  inp3 = 1'b1; sel1 = 1'b0; sel0 = 1'b1;
+		#5
+		inp0 =1'b1; inp1=1'b0; inp2=1'b1;  inp3 = 1'b0; sel1 = 1'b1; sel0 = 1'b0;
+
+end
+	
+initial
+	begin
+		$monitor("Simulation Time = %g, inp0 = %b, inp1=%b, inp2=%b, inp3=%b, sel1=%b, sel0=%b, result = %b", $time,inp0, inp1, inp2, inp3, sel1, sel0,result);
+	end
+endmodule

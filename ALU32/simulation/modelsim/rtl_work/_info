@@ -1,0 +1,391 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1\ALU32\simulation\modelsim
+vALU1_Bit
+!i10b 1
+!s100 YcM<glD2@L>SmNWn2MbO71
+IfocIV@ZT<B?RMR`E<0UZg0
+V^`dPdTO`fLE=[6eoL]XJ30
+Z1 dC:\altera\13.0sp1\ALU32\simulation\modelsim
+w1607178523
+8C:/altera/13.0sp1/ALU32/ALU1_Bit.v
+FC:/altera/13.0sp1/ALU32/ALU1_Bit.v
+L0 2
+Z2 OV;L;10.1d;51
+r1
+!s85 0
+31
+Z3 !s108 1607529826.171000
+Z4 !s107 C:/altera/13.0sp1/ALU32/ALU_Bit_MSB_testbench.v|C:/altera/13.0sp1/ALU32/ALU1_Bit.v|C:/altera/13.0sp1/ALU32/ALU1_Bit_MSB.v|C:/altera/13.0sp1/ALU32/ALU1_Bit_testbench.v|C:/altera/13.0sp1/ALU32/ALU32.v|C:/altera/13.0sp1/ALU32/ALU32_testbench.v|C:/altera/13.0sp1/ALU32/andmodule.v|C:/altera/13.0sp1/ALU32/andmodule_testbench.v|C:/altera/13.0sp1/ALU32/full_adder.v|C:/altera/13.0sp1/ALU32/full_adder_testbench.v|C:/altera/13.0sp1/ALU32/mux2x1module.v|C:/altera/13.0sp1/ALU32/mux2x1module_testbench.v|C:/altera/13.0sp1/ALU32/mux4x1module.v|C:/altera/13.0sp1/ALU32/mux4x1module_testbench.v|C:/altera/13.0sp1/ALU32/notmodule.v|C:/altera/13.0sp1/ALU32/notmodule_testbench.v|C:/altera/13.0sp1/ALU32/ormodule.v|C:/altera/13.0sp1/ALU32/ormodule_testbench.v|C:/altera/13.0sp1/ALU32/xormodule.v|C:/altera/13.0sp1/ALU32/xormodule_testbench.v|
+Z5 !s90 -reportprogress|300|-work|work|C:/altera/13.0sp1/ALU32/xormodule_testbench.v|C:/altera/13.0sp1/ALU32/xormodule.v|C:/altera/13.0sp1/ALU32/ormodule_testbench.v|C:/altera/13.0sp1/ALU32/ormodule.v|C:/altera/13.0sp1/ALU32/notmodule_testbench.v|C:/altera/13.0sp1/ALU32/notmodule.v|C:/altera/13.0sp1/ALU32/mux4x1module_testbench.v|C:/altera/13.0sp1/ALU32/mux4x1module.v|C:/altera/13.0sp1/ALU32/mux2x1module_testbench.v|C:/altera/13.0sp1/ALU32/mux2x1module.v|C:/altera/13.0sp1/ALU32/full_adder_testbench.v|C:/altera/13.0sp1/ALU32/full_adder.v|C:/altera/13.0sp1/ALU32/andmodule_testbench.v|C:/altera/13.0sp1/ALU32/andmodule.v|C:/altera/13.0sp1/ALU32/ALU32_testbench.v|C:/altera/13.0sp1/ALU32/ALU32.v|C:/altera/13.0sp1/ALU32/ALU1_Bit_testbench.v|C:/altera/13.0sp1/ALU32/ALU1_Bit_MSB.v|C:/altera/13.0sp1/ALU32/ALU1_Bit.v|C:/altera/13.0sp1/ALU32/ALU_Bit_MSB_testbench.v|
+!s101 -O0
+Z6 o-work work -O0
+n@a@l@u1_@bit
+vALU1_Bit_MSB
+!i10b 1
+!s100 Xl1GfjnNnV?QXRWF_N3>N3
+I0TS7T=_6ER6R1:B8gdXfT3
+Vo;oj?5ReN;P5C=foX^^fW2
+R1
+w1607321882
+8C:/altera/13.0sp1/ALU32/ALU1_Bit_MSB.v
+FC:/altera/13.0sp1/ALU32/ALU1_Bit_MSB.v
+L0 3
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+n@a@l@u1_@bit_@m@s@b
+vALU1_Bit_testbench
+!i10b 1
+!s100 gMi8oci?hd@=5gB`_k6RM2
+IGbDb5:NU<c@mf>ihi=C8?2
+VFEIhl_61HAgoSfH>7DQC90
+R1
+w1607336878
+8C:/altera/13.0sp1/ALU32/ALU1_Bit_testbench.v
+FC:/altera/13.0sp1/ALU32/ALU1_Bit_testbench.v
+L0 3
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+n@a@l@u1_@bit_testbench
+vALU32
+!i10b 1
+!s100 d7<HUcGkYJAglTYONUkBM0
+IoV:A1hgz5ABFjSFDT9i2^2
+VUO?QXFGfB>Y7mfISH@>Q_1
+R1
+w1607322689
+8C:/altera/13.0sp1/ALU32/ALU32.v
+FC:/altera/13.0sp1/ALU32/ALU32.v
+L0 2
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+n@a@l@u32
+vALU32_testbench
+!i10b 1
+!s100 z7NOKVJdi[2[XN7K;7F8=3
+Inc0WZD@7olca<OeJ:dX=o2
+V[IX[BRESbAFcS9_i<bgK^1
+R1
+w1607327030
+8C:/altera/13.0sp1/ALU32/ALU32_testbench.v
+FC:/altera/13.0sp1/ALU32/ALU32_testbench.v
+L0 3
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+n@a@l@u32_testbench
+vALU_Bit_MSB_testbench
+!i10b 1
+!s100 nKP[S4=VKl44>FkgLhegd0
+IFemPhXX4HzHIMz^B[O^[S0
+V8:ezbhdX2^MAncb5ee4<K3
+R1
+w1607326205
+8C:/altera/13.0sp1/ALU32/ALU_Bit_MSB_testbench.v
+FC:/altera/13.0sp1/ALU32/ALU_Bit_MSB_testbench.v
+L0 3
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+n@a@l@u_@bit_@m@s@b_testbench
+vandmodule
+!i10b 1
+!s100 b22GBF8UNHFVQeHMokSbj3
+I`3W2[oCzPHQGQT>bH^COb1
+Vi5cYciMk147KIQ5VWeM<I2
+R1
+w1607335293
+8C:/altera/13.0sp1/ALU32/andmodule.v
+FC:/altera/13.0sp1/ALU32/andmodule.v
+L0 2
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+vandmodule_testbench
+!i10b 1
+!s100 NRP=]K67go9Rh[D][_JO`2
+I^<V;i2LTC_G;;bI4aejlK3
+V5h@ee^ENkM]LRfMi3dA3g1
+R1
+w1606981710
+8C:/altera/13.0sp1/ALU32/andmodule_testbench.v
+FC:/altera/13.0sp1/ALU32/andmodule_testbench.v
+L0 4
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+vfull_adder
+!i10b 1
+!s100 zWb^_@98OIdXCid7=nG6g3
+IHCRYf>c4BjK:hj9l>`lmN0
+VZBa_AL@S?H__PVdJ]To170
+R1
+w1607515238
+8C:/altera/13.0sp1/ALU32/full_adder.v
+FC:/altera/13.0sp1/ALU32/full_adder.v
+L0 2
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+vfull_adder_testbench
+!i10b 1
+!s100 VMMbl]F8e]KQS?bUSLznn0
+IcKA7ieV]=N5F40X>3VmAP0
+V<JLH3TkG^j>n[U:4II63c1
+R1
+w1606982849
+8C:/altera/13.0sp1/ALU32/full_adder_testbench.v
+FC:/altera/13.0sp1/ALU32/full_adder_testbench.v
+L0 5
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+vmux2x1module
+!i10b 1
+!s100 ?<1Fj:9R7Vk?:[U6M=2PJ2
+IZV<Z8dE8GKPJ^n>6QBALo0
+VEF`_XXjB@3QAUMXh<0Yck2
+R1
+w1607515211
+8C:/altera/13.0sp1/ALU32/mux2x1module.v
+FC:/altera/13.0sp1/ALU32/mux2x1module.v
+L0 3
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+vmux2x1module_testbench
+!i10b 1
+!s100 6Hc[NCZT5ogfeQez64BG[0
+IE>l[_KU?Q<Ui[B>RE>A2O3
+V6S:J^GYVbh4Z0UnAEYEcP3
+R1
+w1606982476
+8C:/altera/13.0sp1/ALU32/mux2x1module_testbench.v
+FC:/altera/13.0sp1/ALU32/mux2x1module_testbench.v
+L0 5
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+vmux4x1module
+!i10b 1
+!s100 >QjCV6[>abkdLiB4ifYQS2
+Ig2_WCOnNWz6V=@0Ziz`5k0
+V:@]RQnjk1TobWK=B@Kz5P3
+R1
+w1606978280
+8C:/altera/13.0sp1/ALU32/mux4x1module.v
+FC:/altera/13.0sp1/ALU32/mux4x1module.v
+L0 3
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+vmux4x1module_testbench
+!i10b 1
+!s100 KRLfmMT1laS5J;CFnCZiU2
+I9AAfP4XFl<QnKk]Q5Rm>U3
+VSdD@Sd_b8PAFj@fYcQFH43
+R1
+w1606982299
+8C:/altera/13.0sp1/ALU32/mux4x1module_testbench.v
+FC:/altera/13.0sp1/ALU32/mux4x1module_testbench.v
+L0 5
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+vnotmodule
+!i10b 1
+!s100 o4OScN6GLJgZ<LHGYkQCD2
+I1NQARINgC1oFXcn?HW0^V2
+Vha1PS3IJcn8MhPBnAj76b1
+R1
+w1607335328
+8C:/altera/13.0sp1/ALU32/notmodule.v
+FC:/altera/13.0sp1/ALU32/notmodule.v
+L0 2
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+vnotmodule_testbench
+!i10b 1
+!s100 X1?A=1W8[N1DQ3d^N]Ezl2
+I1FN[XTd4BWNf:hTYkA]lX2
+Va?aZoD?;HjF56mzJQ5;n72
+R1
+w1606981752
+8C:/altera/13.0sp1/ALU32/notmodule_testbench.v
+FC:/altera/13.0sp1/ALU32/notmodule_testbench.v
+L0 5
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+vormodule
+!i10b 1
+!s100 XlDk;NUQKZ1l^eT_Ge;fd2
+IDz?J5`oJz7;@RJemAbWQZ1
+V>]033gCQYGJ`KZnle_>FJ3
+R1
+w1606979445
+8C:/altera/13.0sp1/ALU32/ormodule.v
+FC:/altera/13.0sp1/ALU32/ormodule.v
+L0 2
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+vormodule_testbench
+!i10b 1
+!s100 Smh>U6J3ge1Y`^KZ>E:b:3
+IWb8Tm63ROGll3h48fEN]V1
+V1^0R8A]RfU78i1o5<z`mW2
+R1
+w1606981717
+8C:/altera/13.0sp1/ALU32/ormodule_testbench.v
+FC:/altera/13.0sp1/ALU32/ormodule_testbench.v
+L0 4
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+vxormodule
+!i10b 1
+!s100 n8alSZPA45[k6IeiEh3Rj1
+I65Q7e7A29E3fiHGmSiGcO1
+V`cWaZ<@EZf]e_Xdb2QTkl3
+R1
+w1607515217
+8C:/altera/13.0sp1/ALU32/xormodule.v
+FC:/altera/13.0sp1/ALU32/xormodule.v
+L0 2
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6
+vxormodule_testbench
+!i10b 1
+!s100 Z6N`1UcDY`4c>RTPgIOmC1
+IecZ@hF=bERTojz9XWc3o22
+V18I15V?zjDez6U>_9Y9>K3
+R1
+w1606977739
+8C:/altera/13.0sp1/ALU32/xormodule_testbench.v
+FC:/altera/13.0sp1/ALU32/xormodule_testbench.v
+L0 5
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!s101 -O0
+R6

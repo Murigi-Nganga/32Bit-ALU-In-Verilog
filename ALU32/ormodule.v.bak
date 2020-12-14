@@ -1,0 +1,8 @@
+//The OR Module
+module ormodule(a,b,result);
+input a, b;
+output result;
+
+assign result = a | b;
+
+endmodule

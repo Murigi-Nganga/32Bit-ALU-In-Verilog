@@ -1,0 +1,142 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do ALU32_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/ALU32 {C:/altera/13.0sp1/ALU32/andmodule.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module andmodule
+# 
+# Top level modules:
+# 	andmodule
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/ALU32 {C:/altera/13.0sp1/ALU32/ormodule.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ormodule
+# 
+# Top level modules:
+# 	ormodule
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/ALU32 {C:/altera/13.0sp1/ALU32/xormodule.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module xormodule
+# 
+# Top level modules:
+# 	xormodule
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/ALU32 {C:/altera/13.0sp1/ALU32/notmodule.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module notmodule
+# 
+# Top level modules:
+# 	notmodule
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/ALU32 {C:/altera/13.0sp1/ALU32/mux4x1module.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mux4x1module
+# 
+# Top level modules:
+# 	mux4x1module
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/ALU32 {C:/altera/13.0sp1/ALU32/mux2x1module.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mux2x1module
+# 
+# Top level modules:
+# 	mux2x1module
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/ALU32 {C:/altera/13.0sp1/ALU32/full_adder.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module full_adder
+# 
+# Top level modules:
+# 	full_adder
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/ALU32 {C:/altera/13.0sp1/ALU32/ALU1_Bit.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ALU1_Bit
+# 
+# Top level modules:
+# 	ALU1_Bit
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/ALU32 {C:/altera/13.0sp1/ALU32/ALU32.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ALU32
+# 
+# Top level modules:
+# 	ALU32
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/ALU32 {C:/altera/13.0sp1/ALU32/ALU1_Bit_MSB.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ALU1_Bit_MSB
+# 
+# Top level modules:
+# 	ALU1_Bit_MSB
+# 
+# Modified modelsim.ini
+vlog -reportprogress 300 -work work C:/altera/13.0sp1/ALU32/xormodule_testbench.v C:/altera/13.0sp1/ALU32/xormodule.v C:/altera/13.0sp1/ALU32/ormodule_testbench.v C:/altera/13.0sp1/ALU32/ormodule.v C:/altera/13.0sp1/ALU32/notmodule_testbench.v C:/altera/13.0sp1/ALU32/notmodule.v C:/altera/13.0sp1/ALU32/mux4x1module_testbench.v C:/altera/13.0sp1/ALU32/mux4x1module.v C:/altera/13.0sp1/ALU32/mux2x1module_testbench.v C:/altera/13.0sp1/ALU32/mux2x1module.v C:/altera/13.0sp1/ALU32/full_adder_testbench.v C:/altera/13.0sp1/ALU32/full_adder.v C:/altera/13.0sp1/ALU32/andmodule_testbench.v C:/altera/13.0sp1/ALU32/andmodule.v C:/altera/13.0sp1/ALU32/ALU32_testbench.v C:/altera/13.0sp1/ALU32/ALU32.v C:/altera/13.0sp1/ALU32/ALU1_Bit_testbench.v C:/altera/13.0sp1/ALU32/ALU1_Bit_MSB.v C:/altera/13.0sp1/ALU32/ALU1_Bit.v C:/altera/13.0sp1/ALU32/ALU_Bit_MSB_testbench.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module xormodule_testbench
+# -- Compiling module xormodule
+# -- Compiling module ormodule_testbench
+# -- Compiling module ormodule
+# -- Compiling module notmodule_testbench
+# -- Compiling module notmodule
+# -- Compiling module mux4x1module_testbench
+# -- Compiling module mux4x1module
+# -- Compiling module mux2x1module_testbench
+# -- Compiling module mux2x1module
+# -- Compiling module full_adder_testbench
+# -- Compiling module full_adder
+# -- Compiling module andmodule_testbench
+# -- Compiling module andmodule
+# -- Compiling module ALU32_testbench
+# -- Compiling module ALU32
+# -- Compiling module ALU1_Bit_testbench
+# -- Compiling module ALU1_Bit_MSB
+# -- Compiling module ALU1_Bit
+# -- Compiling module ALU_Bit_MSB_testbench
+# 
+# Top level modules:
+# 	xormodule_testbench
+# 	ormodule_testbench
+# 	notmodule_testbench
+# 	mux4x1module_testbench
+# 	mux2x1module_testbench
+# 	full_adder_testbench
+# 	andmodule_testbench
+# 	ALU32_testbench
+# 	ALU1_Bit_testbench
+# 	ALU_Bit_MSB_testbench
+vsim work.ALU32_testbench
+# vsim work.ALU32_testbench 
+# Loading work.ALU32_testbench
+# Loading work.ALU32
+# Loading work.ALU1_Bit
+# Loading work.notmodule
+# Loading work.mux2x1module
+# Loading work.andmodule
+# Loading work.ormodule
+# Loading work.xormodule
+# Loading work.full_adder
+# Loading work.mux4x1module
+# Loading work.ALU1_Bit_MSB
+add wave -position end  sim:/ALU32_testbench/result
+add wave -position end  sim:/ALU32_testbench/overflow
+add wave -position end  sim:/ALU32_testbench/opcode
+add wave -position end  sim:/ALU32_testbench/cout
+add wave -position end  sim:/ALU32_testbench/b
+add wave -position end  sim:/ALU32_testbench/a
+run
+# Simulation Time =  0,a =00000000000000000000000000001011, b=00000000000000000000000000000110, opcode=0000 , result=00000000000000000000000000000010
+run
+# Simulation Time =  0,a =00000000000000000000000000001011, b=00000000000000000000000000000110, opcode=0001 , result=00000000000000000000000000001111
+run
+# Simulation Time =  0,a =00000000000000000000000000001011, b=00000000000000000000000000000110, opcode=0010 , result=00000000000000000000000000001101
+run
+# Simulation Time =  0,a =10000000000000000000000000001011, b=10000000000000000000000000000110, opcode=0011 , result=00000000000000000000000000010001
+run
+# Simulation Time =  0,a =00000000000000000000000000001011, b=00000000000000000000000000000110, opcode=0111 , result=00000000000000000000000000000101
+run
+# Simulation Time =  1,a =00000000000000000000000000001011, b=10000000000000000000000000000110, opcode=0110 , result=00000000000000000000000000000001
+run
+# Simulation Time =  1,a =00000000000000000000000000001011, b=00000000000000000000000000000110, opcode=1100 , result=11111111111111111111111111110000
+run

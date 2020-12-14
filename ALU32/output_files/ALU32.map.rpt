@@ -1,0 +1,842 @@
+Analysis & Synthesis report for ALU32
+Wed Dec 09 19:00:27 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "ALU1_Bit_MSB:ALU32"
+ 11. Port Connectivity Checks: "ALU1_Bit:ALU31"
+ 12. Port Connectivity Checks: "ALU1_Bit:ALU30"
+ 13. Port Connectivity Checks: "ALU1_Bit:ALU29"
+ 14. Port Connectivity Checks: "ALU1_Bit:ALU28"
+ 15. Port Connectivity Checks: "ALU1_Bit:ALU27"
+ 16. Port Connectivity Checks: "ALU1_Bit:ALU26"
+ 17. Port Connectivity Checks: "ALU1_Bit:ALU25"
+ 18. Port Connectivity Checks: "ALU1_Bit:ALU24"
+ 19. Port Connectivity Checks: "ALU1_Bit:ALU23"
+ 20. Port Connectivity Checks: "ALU1_Bit:ALU22"
+ 21. Port Connectivity Checks: "ALU1_Bit:ALU21"
+ 22. Port Connectivity Checks: "ALU1_Bit:ALU20"
+ 23. Port Connectivity Checks: "ALU1_Bit:ALU19"
+ 24. Port Connectivity Checks: "ALU1_Bit:ALU18"
+ 25. Port Connectivity Checks: "ALU1_Bit:ALU17"
+ 26. Port Connectivity Checks: "ALU1_Bit:ALU16"
+ 27. Port Connectivity Checks: "ALU1_Bit:ALU15"
+ 28. Port Connectivity Checks: "ALU1_Bit:ALU14"
+ 29. Port Connectivity Checks: "ALU1_Bit:ALU13"
+ 30. Port Connectivity Checks: "ALU1_Bit:ALU12"
+ 31. Port Connectivity Checks: "ALU1_Bit:ALU11"
+ 32. Port Connectivity Checks: "ALU1_Bit:ALU10"
+ 33. Port Connectivity Checks: "ALU1_Bit:ALU9"
+ 34. Port Connectivity Checks: "ALU1_Bit:ALU8"
+ 35. Port Connectivity Checks: "ALU1_Bit:ALU7"
+ 36. Port Connectivity Checks: "ALU1_Bit:ALU6"
+ 37. Port Connectivity Checks: "ALU1_Bit:ALU5"
+ 38. Port Connectivity Checks: "ALU1_Bit:ALU4"
+ 39. Port Connectivity Checks: "ALU1_Bit:ALU3"
+ 40. Port Connectivity Checks: "ALU1_Bit:ALU2"
+ 41. Elapsed Time Per Partition
+ 42. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Dec 09 19:00:27 2020           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; ALU32                                           ;
+; Top-level Entity Name              ; ALU32                                           ;
+; Family                             ; Cyclone IV GX                                   ;
+; Total logic elements               ; 195                                             ;
+;     Total combinational functions  ; 195                                             ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 102                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total GXB Receiver Channel PCS     ; 0                                               ;
+; Total GXB Receiver Channel PMA     ; 0                                               ;
+; Total GXB Transmitter Channel PCS  ; 0                                               ;
+; Total GXB Transmitter Channel PMA  ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; ALU32              ; ALU32              ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                         ;
++----------------------------------+-----------------+------------------------+----------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path           ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------+---------+
+; andmodule.v                      ; yes             ; User Verilog HDL File  ; C:/altera/13.0sp1/ALU32/andmodule.v    ;         ;
+; ormodule.v                       ; yes             ; User Verilog HDL File  ; C:/altera/13.0sp1/ALU32/ormodule.v     ;         ;
+; xormodule.v                      ; yes             ; User Verilog HDL File  ; C:/altera/13.0sp1/ALU32/xormodule.v    ;         ;
+; notmodule.v                      ; yes             ; User Verilog HDL File  ; C:/altera/13.0sp1/ALU32/notmodule.v    ;         ;
+; mux4x1module.v                   ; yes             ; User Verilog HDL File  ; C:/altera/13.0sp1/ALU32/mux4x1module.v ;         ;
+; mux2x1module.v                   ; yes             ; User Verilog HDL File  ; C:/altera/13.0sp1/ALU32/mux2x1module.v ;         ;
+; full_adder.v                     ; yes             ; User Verilog HDL File  ; C:/altera/13.0sp1/ALU32/full_adder.v   ;         ;
+; ALU1_Bit.v                       ; yes             ; User Verilog HDL File  ; C:/altera/13.0sp1/ALU32/ALU1_Bit.v     ;         ;
+; ALU32.v                          ; yes             ; User Verilog HDL File  ; C:/altera/13.0sp1/ALU32/ALU32.v        ;         ;
+; ALU1_Bit_MSB.v                   ; yes             ; User Verilog HDL File  ; C:/altera/13.0sp1/ALU32/ALU1_Bit_MSB.v ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 102              ;
+; DSP block 9-bit elements ; 0                ;
+; Maximum fan-out node     ; opcode[2]~input  ;
+; Maximum fan-out          ; 98               ;
+; Total fan-out            ; 791              ;
+; Average fan-out          ; 1.98             ;
++--------------------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                   ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                           ; Library Name ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------+--------------+
+; |ALU32                         ; 195 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 102  ; 0            ; |ALU32                                                        ; work         ;
+;    |ALU1_Bit:ALU10|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU10                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU10|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU10|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU10|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU10|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU10|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU10|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU11|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU11                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU11|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU11|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU11|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU11|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU11|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU11|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU12|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU12                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU12|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU12|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU12|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU12|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU12|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU12|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU13|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU13                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU13|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU13|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU13|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU13|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU13|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU13|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU14|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU14                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU14|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU14|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU14|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU14|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU14|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU14|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU15|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU15                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU15|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU15|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU15|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU15|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU15|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU15|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU16|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU16                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU16|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU16|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU16|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU16|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU16|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU16|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU17|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU17                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU17|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU17|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU17|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU17|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU17|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU17|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU18|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU18                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU18|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU18|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU18|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU18|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU18|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU18|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU19|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU19                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU19|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU19|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU19|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU19|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU19|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU19|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU1|             ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU1                                          ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU1|full_adder:full_adder1                   ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU1|full_adder:full_adder1|ormodule:or1      ; work         ;
+;       |mux4x1module:largemux1| ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU1|mux4x1module:largemux1                   ; work         ;
+;    |ALU1_Bit:ALU20|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU20                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU20|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU20|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU20|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU20|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU20|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU20|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU21|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU21                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU21|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU21|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU21|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU21|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU21|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU21|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU22|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU22                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU22|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU22|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU22|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU22|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU22|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU22|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU23|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU23                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU23|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU23|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU23|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU23|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU23|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU23|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU24|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU24                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU24|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU24|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU24|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU24|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU24|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU24|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU25|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU25                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU25|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU25|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU25|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU25|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU25|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU25|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU26|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU26                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU26|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU26|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU26|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU26|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU26|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU26|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU27|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU27                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU27|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU27|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU27|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU27|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU27|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU27|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU28|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU28                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU28|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU28|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU28|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU28|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU28|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU28|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU29|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU29                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU29|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU29|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU29|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU29|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU29|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU29|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU2|             ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU2                                          ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU2|full_adder:full_adder1                   ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU2|full_adder:full_adder1|ormodule:or1      ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU2|mux2x1module:smallmux1                   ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU2|mux2x1module:smallmux2                   ; work         ;
+;       |mux4x1module:largemux1| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU2|mux4x1module:largemux1                   ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU2|xormodule:xor1                           ; work         ;
+;    |ALU1_Bit:ALU30|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU30                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU30|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU30|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU30|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU30|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU30|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU30|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU31|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU31                                         ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU31|full_adder:full_adder1                  ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU31|full_adder:full_adder1|ormodule:or1     ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU31|mux2x1module:smallmux1                  ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU31|mux2x1module:smallmux2                  ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU31|mux4x1module:largemux1                  ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU31|xormodule:xor1                          ; work         ;
+;    |ALU1_Bit:ALU3|             ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU3                                          ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU3|full_adder:full_adder1                   ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU3|full_adder:full_adder1|ormodule:or1      ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU3|mux2x1module:smallmux1                   ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU3|mux2x1module:smallmux2                   ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU3|mux4x1module:largemux1                   ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU3|xormodule:xor1                           ; work         ;
+;    |ALU1_Bit:ALU4|             ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU4                                          ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU4|full_adder:full_adder1                   ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU4|full_adder:full_adder1|ormodule:or1      ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU4|mux2x1module:smallmux1                   ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU4|mux2x1module:smallmux2                   ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU4|mux4x1module:largemux1                   ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU4|xormodule:xor1                           ; work         ;
+;    |ALU1_Bit:ALU5|             ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU5                                          ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU5|full_adder:full_adder1                   ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU5|full_adder:full_adder1|ormodule:or1      ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU5|mux2x1module:smallmux1                   ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU5|mux2x1module:smallmux2                   ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU5|mux4x1module:largemux1                   ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU5|xormodule:xor1                           ; work         ;
+;    |ALU1_Bit:ALU6|             ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU6                                          ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU6|full_adder:full_adder1                   ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU6|full_adder:full_adder1|ormodule:or1      ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU6|mux2x1module:smallmux1                   ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU6|mux2x1module:smallmux2                   ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU6|mux4x1module:largemux1                   ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU6|xormodule:xor1                           ; work         ;
+;    |ALU1_Bit:ALU7|             ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU7                                          ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU7|full_adder:full_adder1                   ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU7|full_adder:full_adder1|ormodule:or1      ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU7|mux2x1module:smallmux1                   ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU7|mux2x1module:smallmux2                   ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU7|mux4x1module:largemux1                   ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU7|xormodule:xor1                           ; work         ;
+;    |ALU1_Bit:ALU8|             ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU8                                          ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU8|full_adder:full_adder1                   ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU8|full_adder:full_adder1|ormodule:or1      ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU8|mux2x1module:smallmux1                   ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU8|mux2x1module:smallmux2                   ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU8|mux4x1module:largemux1                   ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU8|xormodule:xor1                           ; work         ;
+;    |ALU1_Bit:ALU9|             ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU9                                          ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU9|full_adder:full_adder1                   ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU9|full_adder:full_adder1|ormodule:or1      ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU9|mux2x1module:smallmux1                   ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU9|mux2x1module:smallmux2                   ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU9|mux4x1module:largemux1                   ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit:ALU9|xormodule:xor1                           ; work         ;
+;    |ALU1_Bit_MSB:ALU32|        ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit_MSB:ALU32                                     ; work         ;
+;       |full_adder:full_adder1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit_MSB:ALU32|full_adder:full_adder1              ; work         ;
+;          |ormodule:or1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit_MSB:ALU32|full_adder:full_adder1|ormodule:or1 ; work         ;
+;       |mux2x1module:smallmux1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit_MSB:ALU32|mux2x1module:smallmux1              ; work         ;
+;       |mux2x1module:smallmux2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit_MSB:ALU32|mux2x1module:smallmux2              ; work         ;
+;       |mux4x1module:largemux1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit_MSB:ALU32|mux4x1module:largemux1              ; work         ;
+;       |xormodule:xor1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit_MSB:ALU32|xormodule:xor1                      ; work         ;
+;       |xormodule:xor2|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU32|ALU1_Bit_MSB:ALU32|xormodule:xor2                      ; work         ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; 5:1                ; 31 bits   ; 93 LEs        ; 62 LEs               ; 31 LEs                 ; No         ; |ALU32|ALU1_Bit:ALU2|mux4x1module:largemux1|result ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit_MSB:ALU32" ;
++---------+-------+----------+-------------------+
+; Port    ; Type  ; Severity ; Details           ;
++---------+-------+----------+-------------------+
+; lessinp ; Input ; Info     ; Stuck at GND      ;
++---------+-------+----------+-------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU31" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU30" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU29" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU28" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU27" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU26" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU25" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU24" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU23" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU22" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU21" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU20" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU19" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU18" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU17" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU16" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU15" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU14" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU13" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU12" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU11" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU10" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; lessinp ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU9" ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; lessinp ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU8" ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; lessinp ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU7" ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; lessinp ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU6" ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; lessinp ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU5" ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; lessinp ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU4" ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; lessinp ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU3" ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; lessinp ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "ALU1_Bit:ALU2" ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; lessinp ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Dec 09 19:00:13 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU32 -c ALU32
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file andmodule.v
+    Info (12023): Found entity 1: andmodule
+Info (12021): Found 1 design units, including 1 entities, in source file andmodule_testbench.v
+    Info (12023): Found entity 1: andmodule_testbench
+Info (12021): Found 1 design units, including 1 entities, in source file ormodule.v
+    Info (12023): Found entity 1: ormodule
+Info (12021): Found 1 design units, including 1 entities, in source file ormodule_testbench.v
+    Info (12023): Found entity 1: ormodule_testbench
+Info (12021): Found 1 design units, including 1 entities, in source file xormodule_testbench.v
+    Info (12023): Found entity 1: xormodule_testbench
+Info (12021): Found 1 design units, including 1 entities, in source file xormodule.v
+    Info (12023): Found entity 1: xormodule
+Info (12021): Found 1 design units, including 1 entities, in source file notmodule.v
+    Info (12023): Found entity 1: notmodule
+Info (12021): Found 1 design units, including 1 entities, in source file notmodule_testbench.v
+    Info (12023): Found entity 1: notmodule_testbench
+Info (12021): Found 1 design units, including 1 entities, in source file mux4x1module.v
+    Info (12023): Found entity 1: mux4x1module
+Info (12021): Found 1 design units, including 1 entities, in source file mux4x1module_testbench.v
+    Info (12023): Found entity 1: mux4x1module_testbench
+Info (12021): Found 1 design units, including 1 entities, in source file mux2x1module.v
+    Info (12023): Found entity 1: mux2x1module
+Info (12021): Found 1 design units, including 1 entities, in source file mux2x1module_testbench.v
+    Info (12023): Found entity 1: mux2x1module_testbench
+Info (12021): Found 1 design units, including 1 entities, in source file full_adder.v
+    Info (12023): Found entity 1: full_adder
+Info (12021): Found 1 design units, including 1 entities, in source file full_adder_testbench.v
+    Info (12023): Found entity 1: full_adder_testbench
+Info (12021): Found 1 design units, including 1 entities, in source file alu1_bit.v
+    Info (12023): Found entity 1: ALU1_Bit
+Info (12021): Found 1 design units, including 1 entities, in source file alu1_bit_testbench.v
+    Info (12023): Found entity 1: ALU1_Bit_testbench
+Info (12021): Found 1 design units, including 1 entities, in source file alu32.v
+    Info (12023): Found entity 1: ALU32
+Info (12021): Found 1 design units, including 1 entities, in source file alu1_bit_msb.v
+    Info (12023): Found entity 1: ALU1_Bit_MSB
+Info (12021): Found 1 design units, including 1 entities, in source file alu_bit_msb_testbench.v
+    Info (12023): Found entity 1: ALU_Bit_MSB_testbench
+Info (12021): Found 1 design units, including 1 entities, in source file alu32_testbench.v
+    Info (12023): Found entity 1: ALU32_testbench
+Info (12127): Elaborating entity "ALU32" for the top level hierarchy
+Info (12128): Elaborating entity "ALU1_Bit" for hierarchy "ALU1_Bit:ALU1"
+Info (12128): Elaborating entity "notmodule" for hierarchy "ALU1_Bit:ALU1|notmodule:not1"
+Info (12128): Elaborating entity "mux2x1module" for hierarchy "ALU1_Bit:ALU1|mux2x1module:smallmux1"
+Info (12128): Elaborating entity "andmodule" for hierarchy "ALU1_Bit:ALU1|andmodule:and1"
+Info (12128): Elaborating entity "ormodule" for hierarchy "ALU1_Bit:ALU1|ormodule:or1"
+Info (12128): Elaborating entity "xormodule" for hierarchy "ALU1_Bit:ALU1|xormodule:xor1"
+Info (12128): Elaborating entity "full_adder" for hierarchy "ALU1_Bit:ALU1|full_adder:full_adder1"
+Info (12128): Elaborating entity "mux4x1module" for hierarchy "ALU1_Bit:ALU1|mux4x1module:largemux1"
+Info (12128): Elaborating entity "ALU1_Bit_MSB" for hierarchy "ALU1_Bit_MSB:ALU32"
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 297 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 68 input pins
+    Info (21059): Implemented 34 output pins
+    Info (21061): Implemented 195 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4652 megabytes
+    Info: Processing ended: Wed Dec 09 19:00:27 2020
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:04
+
+

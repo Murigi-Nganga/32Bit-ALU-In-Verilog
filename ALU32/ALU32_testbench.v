@@ -1,0 +1,36 @@
+//32 Bit ALU Testbench
+`timescale 1ns/1ps
+module ALU32_testbench();
+reg [31:0]a;
+reg [31:0]b;
+reg [3:0]opcode;
+
+wire [31:0]result;
+wire cout,overflow;
+
+ALU32 dut(.a(a),.b(b),.opcode(opcode),.result(result),.cout(cout),.overflow(overflow));
+
+initial begin
+a = 32'b00000000000000000000000000001011; b = 32'b00000000000000000000000000000110; opcode = 4'b0000;			//AND
+#0.1;
+a = 32'b00000000000000000000000000001011; b = 32'b00000000000000000000000000000110; opcode = 4'b0001;			//OR
+#0.1;
+a = 32'b00000000000000000000000000001011; b = 32'b00000000000000000000000000000110; opcode = 4'b0010;			//XOR
+#0.1;
+a = 32'b10000000000000000000000000001011; b = 32'b10000000000000000000000000000110; opcode = 4'b0011;			//ADD 
+#0.1;
+a = 32'b00000000000000000000000000001011; b = 32'b00000000000000000000000000000110; opcode = 4'b0111;			//SUB
+#0.1;
+a = 32'b00000000000000000000000000001011; b = 32'b10000000000000000000000000000110; opcode = 4'b0110;			//SLT
+#0.1;
+a = 32'b00000000000000000000000000001011; b = 32'b00000000000000000000000000000110; opcode = 4'b1100;			//NOR
+#0.1;
+end
+ 
+ 
+initial
+begin
+$monitor("Simulation Time = %2d,a =%32b, b=%32b, opcode=%4b , result=%32b", $time, a, b, opcode, result);
+end
+
+endmodule
